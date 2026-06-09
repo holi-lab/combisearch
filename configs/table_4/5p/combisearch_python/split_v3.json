@@ -1,0 +1,17 @@
+{
+  "llm_engine": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "lm_decoding_config": {
+    "beam_size": 4,
+    "method": "beam_search"
+  },
+  "num_examples": 10,
+  "output_dir": "outputs/runs/table_4/5p/combisearch_python/split_v3",
+  "prompt_format": "python-prompt",
+  "retriever_args": {
+    "search_index_filename": "outputs/retrievers/finetuning/mwoz21/combisearch/5p/split_v1/train_index.npy"
+  },
+  "retriever_dir": "outputs/retrievers/finetuning/mwoz21/combisearch/5p/split_v1",
+  "retriever_type": "EmbeddingRetriever",
+  "test_fn": "data/mw24_coref_only_dials_dev.json",
+  "train_fn": "data/mw21_5p_train_v3.json"
+}

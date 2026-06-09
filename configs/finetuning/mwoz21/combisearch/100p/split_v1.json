@@ -1,0 +1,14 @@
+{
+  "base_embedding_model_name": "outputs/retrievers/sentence-transformers_all-mpnet-base-v2/pretrained",
+  "batch_size": 16,
+  "dev_fn": "data/mw24_5p_dev.json",
+  "loss_type": "info_nce_med",
+  "neg_size": 31,
+  "num_epochs": 7,
+  "score_type": "score_delta",
+  "state_transformation_type": "ref_aware_nl",
+  "test_fn": "data/mw24_10p_test_v1.json",
+  "top_k": 10,
+  "top_range": 100,
+  "train_fn": "data/generated/data_generation/mwoz21/100p/split_v1/running_log.json"
+}

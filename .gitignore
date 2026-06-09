@@ -1,0 +1,17 @@
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# virtualenvs
+.venv*/
+
+# editors
+.vscode/
+.idea/
+
+# datasets + built artifacts (rebuilt by runner/preprocess.sh and the table runners)
+data/*.json
+data/generated/
+outputs/
+wandb/

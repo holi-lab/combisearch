@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "combisearch"
+version = "0.1.0"
+description = "CombiSearch dialogue state tracking experiments"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+keywords = ["dialogue-state-tracking", "retrieval", "MultiWOZ"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "accelerate==1.13.0",
+    "dacite",
+    "datasets",
+    "dictdiffer",
+    "fuzzywuzzy",
+    "num2words",
+    "numpy",
+    "openai>=1.0",
+    "packaging",
+    "rank-bm25",
+    "scikit-learn",
+    "scipy",
+    "sentence-transformers==5.1.1",
+    "sqlparse",
+    "tiktoken",
+    "torch>=2.6,<2.7",
+    "tqdm",
+    "transformers>=4.49,<4.54",
+    "wandb",
+]
+
+[tool.uv]
+constraint-dependencies = [
+    "torch>=2.6,<2.7",
+    "torchvision>=0.21,<0.22",
+    "torchaudio>=2.6,<2.7",
+    "transformers>=4.49,<4.54",
+    "vllm>=0.8.5.post1,<0.9",
+]
+
+[project.optional-dependencies]
+local-llm = [
+    "vllm==0.8.5.post1",
+]
+dev = [
+    "pytest",
+]
+
+[project.scripts]
+combisearch-generate-data = "combisearch.cli.generate_data:main"
+combisearch-run-dst = "combisearch.cli.run_dst:main"
+combisearch-train-retriever = "combisearch.cli.train_retriever:main"
+combisearch-build-indexes = "combisearch.cli.build_indexes:main"
+combisearch-path-preview = "combisearch.cli.path_preview:main"
+combisearch-check-artifacts = "combisearch.cli.check_artifacts:main"
+combisearch-summarize = "combisearch.evaluation.summarize:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["combisearch*"]
+
+[tool.setuptools.package-data]
+combisearch = [
+    "**/*.json",
+    "**/*.md",
+    "**/*.sql",
+]
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
+torchaudio = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

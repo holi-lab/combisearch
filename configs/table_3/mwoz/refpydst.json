@@ -1,0 +1,24 @@
+{
+  "add_guidelines": true,
+  "llm_engine": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "lm_decoding_config": {
+    "beam_size": 4,
+    "method": "beam_search"
+  },
+  "num_examples": 10,
+  "prompt_format": "sgd_nl-prompt-chat",
+  "retriever_args": {
+    "bm25_input_kwargs": {
+      "input_type": "dialog_context"
+    },
+    "dense_input_kwargs": {
+      "input_type": "dialog_context"
+    },
+    "sampling_method": "sgd_pre_assigned",
+    "search_index_filename": "outputs/retrievers/finetuning/mwoz21/refpydst/5p/split_v1/train_index.npy"
+  },
+  "retriever_dir": "outputs/retrievers/finetuning/mwoz21/refpydst/5p/split_v1",
+  "retriever_type": "SGD",
+  "test_fn": "data/sgd_30p_test.json",
+  "train_fn": "data/sgd_5p_train.json"
+}

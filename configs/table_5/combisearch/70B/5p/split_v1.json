@@ -1,0 +1,39 @@
+{
+  "llm_engine": "holi-lab/Meta-Llama-3-70B-Instruct-GPTQ",
+  "decoder_config": {
+    "decoder_type": "hybrid",
+    "decoding_logic": "multiply_div_top_k",
+    "discount_factor": 0.2,
+    "from_n_possible": 100,
+    "operation": "multiply",
+    "zscore": true
+  },
+  "index_embedding_model_name": "outputs/retrievers/sentence-transformers_all-mpnet-base-v2/pretrained",
+  "lm_decoding_config": {
+    "beam_size": 4,
+    "method": "beam_search"
+  },
+  "num_examples": {
+    "BM25": 50,
+    "SBERT": 50
+  },
+  "num_samples": 10,
+  "num_sampling_iteration": 3,
+  "prompt_format": "nl-prompt-chat",
+  "quantization": "GPTQ",
+  "retriever_args": {
+    "bm25_input_kwargs": {
+      "gt_type": "gt_delta_slot",
+      "input_type": "dialog_context"
+    },
+    "dense_input_kwargs": {
+      "input_type": "gt_delta_slot"
+    },
+    "search_index_filename": "outputs/indexes/sentence-transformers_all-mpnet-base-v2/gt_delta_slot/train_index.npy"
+  },
+  "retriever_dir": "outputs/retrievers/sentence-transformers_all-mpnet-base-v2/pretrained",
+  "retriever_type": "Hybrid",
+  "score_type": "score_delta",
+  "test_fn": "data/mw24_10p_test_v1.json",
+  "train_fn": "data/mw21_5p_train_v1.json"
+}

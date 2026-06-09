@@ -1,0 +1,26 @@
+{
+  "llm_engine": "holi-lab/Meta-Llama-3-70B-Instruct-GPTQ",
+  "decoder_config": {
+    "decoder_type": "max_emb_distance",
+    "discount_factor": 0.2,
+    "from_n_possible": 100
+  },
+  "lm_decoding_config": {
+    "beam_size": 4,
+    "method": "beam_search"
+  },
+  "num_examples": 10,
+  "output_dir": "outputs/runs/table_2/70B/refpydst/1p/split_v1",
+  "prompt_format": "python-prompt",
+  "quantization": "GPTQ",
+  "retriever_args": {
+    "dense_input_kwargs": {
+      "input_type": "dialog_context"
+    },
+    "search_index_filename": "outputs/retrievers/finetuning/mwoz21/refpydst/1p/split_v1/train_index.npy"
+  },
+  "retriever_dir": "outputs/retrievers/finetuning/mwoz21/refpydst/1p/split_v1",
+  "retriever_type": "EmbeddingRetriever",
+  "test_fn": "data/mw24_100p_test.json",
+  "train_fn": "data/mw21_1p_train_v1.json"
+}

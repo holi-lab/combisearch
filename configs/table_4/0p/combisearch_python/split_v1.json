@@ -1,0 +1,47 @@
+{
+  "llm_engine": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "format_example": {
+    "ID": "formatting_example_python.json",
+    "dialog": {
+      "sys": [
+        "i have booked that for you , is there anything else i can help with ?"
+      ],
+      "usr": [
+        "thank you , i will need a taxi from clare college to the restaurant ."
+      ]
+    },
+    "last_slot_values": {
+      "restaurant-book day": "tuesday",
+      "restaurant-book people": "2",
+      "restaurant-book time": "6:15",
+      "restaurant-food": "modern european",
+      "restaurant-name": "restaurant alimentum"
+    },
+    "slot_values": {
+      "restaurant-book day": "tuesday",
+      "restaurant-book people": "2",
+      "restaurant-book time": "6:15",
+      "restaurant-food": "modern european",
+      "restaurant-name": "restaurant alimentum",
+      "taxi-departure": "clare college",
+      "taxi-destination": "restaurant alimentum"
+    },
+    "turn_id": 0,
+    "turn_slot_values": {
+      "taxi-departure": "clare college",
+      "taxi-destination": "restaurant alimentum"
+    }
+  },
+  "lm_decoding_config": {
+    "beam_size": 4,
+    "method": "beam_search"
+  },
+  "num_examples": 1,
+  "output_dir": "outputs/runs/table_4/0p/combisearch_python/split_v1",
+  "prompt_format": "python-prompt",
+  "retriever_args": {},
+  "retriever_dir": "none",
+  "retriever_type": "no_retriever",
+  "test_fn": "data/mw24_coref_only_dials_dev.json",
+  "train_fn": "data/mw21_0p_train.json"
+}

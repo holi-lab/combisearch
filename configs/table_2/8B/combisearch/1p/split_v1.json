@@ -1,0 +1,34 @@
+{
+  "add_guidelines": false,
+  "llm_engine": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "decoder_config": {
+    "decoder_type": "hybrid",
+    "decoding_logic": "multiply_top_k",
+    "from_n_possible": 10,
+    "is_inference": true,
+    "operation": "multiply",
+    "zscore": true
+  },
+  "lm_decoding_config": {
+    "beam_size": 4,
+    "method": "beam_search"
+  },
+  "num_examples": {
+    "BM25": 0,
+    "SBERT": 10
+  },
+  "prompt_format": "nl-prompt-chat",
+  "retriever_args": {
+    "bm25_input_kwargs": {
+      "input_type": "dialog_context"
+    },
+    "dense_input_kwargs": {
+      "input_type": "dialog_context"
+    },
+    "search_index_filename": "outputs/retrievers/finetuning/mwoz21/combisearch/1p/split_v1/train_index.npy"
+  },
+  "retriever_dir": "outputs/retrievers/finetuning/mwoz21/combisearch/1p/split_v1",
+  "retriever_type": "Hybrid",
+  "test_fn": "data/mw24_100p_test.json",
+  "train_fn": "data/mw21_1p_train_v1.json"
+}

@@ -1,0 +1,21 @@
+{
+  "llm_engine": "gpt-3.5-turbo",
+  "decoder_config": {
+    "decoder_type": "max_emb_distance",
+    "discount_factor": 0.2,
+    "from_n_possible": 100
+  },
+  "num_examples": 10,
+  "output_dir": "outputs/runs/table_1/mw24/refpydst/5p/split_v2",
+  "prompt_format": "python-prompt",
+  "retriever_args": {
+    "dense_input_kwargs": {
+      "input_type": "dialog_context"
+    },
+    "search_index_filename": "outputs/retrievers/finetuning/mwoz21/refpydst/5p/split_v2/train_index.npy"
+  },
+  "retriever_dir": "outputs/retrievers/finetuning/mwoz21/refpydst/5p/split_v2",
+  "retriever_type": "EmbeddingRetriever",
+  "test_fn": "data/mw24_100p_test.json",
+  "train_fn": "data/mw21_5p_train_v2.json"
+}

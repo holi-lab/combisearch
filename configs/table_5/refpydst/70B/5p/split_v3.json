@@ -1,0 +1,25 @@
+{
+  "add_guidelines": true,
+  "llm_engine": "holi-lab/Meta-Llama-3-70B-Instruct-GPTQ",
+  "decoder_config": {
+    "decoder_type": "f1_top_k"
+  },
+  "index_embedding_model_name": "outputs/retrievers/sentence-transformers_all-mpnet-base-v2/pretrained",
+  "lm_decoding_config": {
+    "beam_size": 4,
+    "method": "beam_search"
+  },
+  "num_examples": 10,
+  "prompt_format": "python-prompt",
+  "quantization": "GPTQ",
+  "retriever_args": {
+    "dense_input_kwargs": {
+      "input_type": "dialog_context"
+    },
+    "search_index_filename": "outputs/indexes/sentence-transformers_all-mpnet-base-v2/dialog_context_bs/train_index.npy"
+  },
+  "retriever_dir": "outputs/retrievers/sentence-transformers_all-mpnet-base-v2/pretrained",
+  "retriever_type": "EmbeddingRetriever",
+  "test_fn": "data/mw24_10p_test_v3.json",
+  "train_fn": "data/mw21_5p_train_v1.json"
+}

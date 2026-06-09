@@ -1,0 +1,20 @@
+{
+  "train_fn": "data/mw21_100p_train.json",
+  "test_fn": "data/mw24_10p_test_v3.json",
+  "prompt_format": "nl-prompt-chat",
+  "add_guidelines": false,
+  "retriever_type": "random",
+  "retriever_dir": "outputs/retrievers/sentence-transformers_all-mpnet-base-v2/pretrained",
+  "retriever_args": {
+    "search_index_filename": "outputs/indexes/sentence-transformers_all-mpnet-base-v2/gt_delta_bs/train_index.npy"
+  },
+  "lm_decoding_config": {
+    "method": "beam_search",
+    "beam_size": 4
+  },
+  "llm_engine": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "num_examples": 30,
+  "score_type": "score_delta",
+  "num_sampling_iteration": 3,
+  "num_samples": 3
+}

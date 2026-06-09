@@ -1,0 +1,17 @@
+{
+  "base_embedding_model_name": "outputs/retrievers/sentence-transformers_all-mpnet-base-v2/pretrained",
+  "batch_size": 16,
+  "dev_fn": "data/sgd_5p_dev.json",
+  "filter_domains": false,
+  "loss_type": "info_nce_med",
+  "neg_size": 31,
+  "num_epochs": 15,
+  "output_dir": "outputs/retrievers/finetuning/sgd/combisearch/",
+  "score_type": "score_delta",
+  "state_transformation_type": "ref_aware_nl",
+  "test_fn": "data/sgd_5p_test.json",
+  "top_k": 10,
+  "top_range": 100,
+  "train_fn": "data/generated/data_generation/sgd/split_v1/running_log.json",
+  "use_raw_turn_state": true
+}
