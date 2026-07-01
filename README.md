@@ -39,7 +39,7 @@ The default (non-`FULL`) table runs expect the trained retrievers and prebuilt S
 indexes under `outputs/`. Download the retrievers from Hugging Face:
 
 ```bash
-huggingface-cli download holi-lab/combisearch-artifacts --repo-type dataset --local-dir outputs
+huggingface-cli download holi-lab/combisearch-retrievers --repo-type dataset --local-dir outputs
 ```
 
 This restores the layout the configs reference:
