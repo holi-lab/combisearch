@@ -36,7 +36,7 @@ SGD_DATA_DIR=/path/to/SGD bash runner/preprocess.sh
 ## Retrievers and indexes
 
 The default (non-`FULL`) table runs expect the trained retrievers and prebuilt SBERT
-indexes under `outputs/`. Download the retrievers from Hugging Face:
+indexes under `outputs/`. Download the retrievers from [`holi-lab/combisearch-retrievers`](https://huggingface.co/datasets/holi-lab/combisearch-retrievers)./:
 
 ```bash
 huggingface-cli download holi-lab/combisearch-retrievers --repo-type dataset --local-dir outputs
